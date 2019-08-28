@@ -4,15 +4,16 @@
 #
 Name     : mvn-airlift
 Version  : 0.153
-Release  : 1
+Release  : 2
 URL      : https://github.com/airlift/airlift/archive/0.153.tar.gz
 Source0  : https://github.com/airlift/airlift/archive/0.153.tar.gz
-Source1  : https://repo1.maven.org/maven2/io/airlift/configuration/0.153/configuration-0.153.jar
-Source2  : https://repo1.maven.org/maven2/io/airlift/configuration/0.153/configuration-0.153.pom
-Source3  : https://repo1.maven.org/maven2/io/airlift/log/0.153/log-0.153.jar
-Source4  : https://repo1.maven.org/maven2/io/airlift/log/0.153/log-0.153.pom
-Source5  : https://repo1.maven.org/maven2/io/airlift/stats/0.153/stats-0.153.jar
-Source6  : https://repo1.maven.org/maven2/io/airlift/stats/0.153/stats-0.153.pom
+Source1  : https://repo1.maven.org/maven2/io/airlift/airlift/0.153/airlift-0.153.pom
+Source2  : https://repo1.maven.org/maven2/io/airlift/configuration/0.153/configuration-0.153.jar
+Source3  : https://repo1.maven.org/maven2/io/airlift/configuration/0.153/configuration-0.153.pom
+Source4  : https://repo1.maven.org/maven2/io/airlift/log/0.153/log-0.153.jar
+Source5  : https://repo1.maven.org/maven2/io/airlift/log/0.153/log-0.153.pom
+Source6  : https://repo1.maven.org/maven2/io/airlift/stats/0.153/stats-0.153.jar
+Source7  : https://repo1.maven.org/maven2/io/airlift/stats/0.153/stats-0.153.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -49,23 +50,26 @@ license components for the mvn-airlift package.
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-airlift
 cp LICENSE %{buildroot}/usr/share/package-licenses/mvn-airlift/LICENSE
 cp src/license/LICENSE-HEADER.txt %{buildroot}/usr/share/package-licenses/mvn-airlift/src_license_LICENSE-HEADER.txt
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153/configuration-0.153.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airlift/0.153
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airlift/0.153/airlift-0.153.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153/configuration-0.153.pom
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153/configuration-0.153.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/io/airlift/configuration/0.153/configuration-0.153.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/log/0.153
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/io/airlift/log/0.153/log-0.153.jar
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/io/airlift/log/0.153/log-0.153.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/log/0.153
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/io/airlift/log/0.153/log-0.153.pom
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/io/airlift/log/0.153/log-0.153.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153/stats-0.153.jar
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153/stats-0.153.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153/stats-0.153.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153/stats-0.153.pom
 
 
 %files
@@ -73,6 +77,7 @@ cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/io/airlift/stats/0.153/
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/io/airlift/airlift/0.153/airlift-0.153.pom
 /usr/share/java/.m2/repository/io/airlift/configuration/0.153/configuration-0.153.jar
 /usr/share/java/.m2/repository/io/airlift/configuration/0.153/configuration-0.153.pom
 /usr/share/java/.m2/repository/io/airlift/log/0.153/log-0.153.jar
